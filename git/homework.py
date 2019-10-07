@@ -4,6 +4,7 @@ This is a list of functions that should be completed.
 
 from typing import Any
 from typing import List
+import string
 
 
 class OurAwesomeException(Exception):
@@ -110,11 +111,11 @@ def some_loop_exercise() -> list:
     """
     Use loop to create list that contain int values from 0 to 12 except 6 and 7
     """
-    list = []
+    l_int= []
     for i in range(0, 13):
-        if (i != 6) and (i != 7):
-            list.append(i)
-    return list
+        if (i not in [6,7]):
+            l_int.append(i)
+    return l_int
 
 
 def remove_from_list_all_negative_numbers(data: List[int]) -> list:
@@ -126,11 +127,11 @@ def remove_from_list_all_negative_numbers(data: List[int]) -> list:
         remove_from_list_all_negative_numbers([1, 5, -7, 8, -1])
         >>> [1, 5, 8]
     """
-    list = []
+    positive = []
     for i in data:
         if i >= 0:
-            list.append(i)
-    return list
+            positive.append(i)
+    return positive
 
 
 def alphabet() -> dict:
@@ -141,7 +142,7 @@ def alphabet() -> dict:
         alphabet()
         >>> {"a": 1, "b": 2 ...}
     """
-    alph = "abcdefghijklmnopqrstuvwxyz"
+    alph = string.ascii_lowercase
     return {i: m for i, m in enumerate(alph, 1)}
 
 
